@@ -2,14 +2,21 @@ package com.example.backend.usuario;
 
 import java.util.Date;
 
-import lombok.NoArgsConstructor;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 import lombok.Getter;
 import lombok.Setter;
 
-@NoArgsConstructor
+@Entity
 @Getter @Setter
 public class Usuario {
     
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
     private String nome;
     private String apelido;
     private Date nascimento;
